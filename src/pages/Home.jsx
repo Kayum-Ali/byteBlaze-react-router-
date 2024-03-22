@@ -5,7 +5,9 @@ const Home = () => {
     return (
         <div>
             {/* NavBar */}
-            <Nav></Nav>
+            <div className="h-16">
+                <Nav></Nav>
+            </div>
             <h1>HomePage</h1>
 
         </div>
