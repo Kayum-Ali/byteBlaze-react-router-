@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import Loader from "../Components/Loader";
+import { MdBookmarkAdd } from "react-icons/md";
 
 
 const Blog = () => {
@@ -11,6 +12,11 @@ const Blog = () => {
 
     const { comments_count, title, reading_time_minutes, public_reactions_count, published_at } = blog
     if (navigation.state === "loading") return <Loader></Loader>
+
+
+    const handleBookmark = blog => {
+        console.log(blog)
+    }
     return (
         <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
             <article className="space-y-8">
@@ -40,6 +46,10 @@ const Blog = () => {
                         </svg>
                         <span>Autor</span>
                     </Link>
+                    {/* bookmark btn */}
+                    <div onClick={() => handleBookmark(blog)} className="bg-primary p-3 ml-5 hover:bg-opacity-30 bg-opacity-20 rounded-full text-2xl hover:scale-105 overflow-hidden cursor-pointer">
+                        <MdBookmarkAdd size={20} className="text-secondary"></MdBookmarkAdd>
+                    </div>
 
                 </div>
                 <Outlet></Outlet>
