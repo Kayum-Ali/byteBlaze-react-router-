@@ -9,7 +9,6 @@ const Home = () => {
 
             <img className="absolute bottom-0 w-full" src={wave} alt="" />
 
-
         </div >
     );
 };
